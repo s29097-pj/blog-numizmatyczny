@@ -45,13 +45,12 @@
 </header>
 
 <section class="container" id="posts">
-
     <div class="post-list mt-5">
         <div class="container">
             <?php
             include("connect.php");
             $sqlSelect = "SELECT * FROM posts";
-            $result = mysqli_query($conn,$sqlSelect);
+            $result = mysqli_query($conn, $sqlSelect);
             while ($data = mysqli_fetch_array($result)) {
                 ?>
                 <div class="row mb-4 p-5 bg-light">
@@ -59,13 +58,18 @@
                         <?php echo $data["date"]; ?>
                     </div>
                     <div class="col-sm-3">
-                        <h2> <?php echo $data["title"]; ?></h2>
+                        <h2><?php echo $data["title"]; ?></h2>
+                    </div>
+                    <div class="col-sm-3">
+                        <?php if (!empty($data["image"])) { ?>
+                            <img src="images/<?php echo $data["image"]; ?>" alt="Miniatura" class="img-thumbnail">
+                        <?php } ?>
                     </div>
                     <div class="col-sm-5">
-                        <?php echo $data["content"]; ?>
+                        <?php echo $data["summary"]; ?>
                     </div>
                     <div class="col-sm-2">
-                        <a href="view.php?id=<?php echo $data['id']; ?>" class="btn btn-primary">Pełna treść artykułu</a>
+                        <a href="post_view.php?id=<?php echo $data['id']; ?>" class="btn btn-primary">Pełna treść artykułu</a>
                     </div>
                 </div>
                 <?php
@@ -80,7 +84,7 @@
 </header>
 
 <section class="contact" id="contact">
-    <form class="form container" id="contactForm" method="post" action="send-script.php">
+    <form class="form container" id="contactForm" method="post" action="send_script.php">
         <h3 class="text-center">Formularz kontaktowy</h3>
         <div class="mb-3">
             <input class="form-control" type="text" placeholder="Imię" required id="name" name="name">

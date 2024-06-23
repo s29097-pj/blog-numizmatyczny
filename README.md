@@ -1,5 +1,4 @@
-# blog-numizmatyczny
-
+# Blog numizmatyczny
 ## Założenia projektowe - Blog
 Blog oferuje możliwość:
 - dodawania, usuwania oraz edycji wpisów.
@@ -11,10 +10,9 @@ Blog oferuje możliwość:
         - jeśli użytkownik nie jest zarejestrowany, to autorem komentarza jest "Gość", w przeciwnym razie podajemy jego login.
     - Dodatkowo istnieje zakładka przeznaczona do kontaktu z autorem bloga.
     - Na stronie dostępny jest panel administracyjny.
-    ```
-    Username: admin
-    Password: pass
-    ```
+    - Dane do logowania do panelu administracyjnego:
+        - login: **admin**
+        - hasło: **pass**
     - Istnieją różne typy konta: administrator (może wszystko - dodawać, usuwać, edytować wpisy, sprawdzać ewentualne logi),
     - autor bloga (może dodawać, usuwać i edytować wpisy, może zresetować swoje hasło), użytkownik (dodaje komentarze i może zresetować swoje hasło).
 - Wpisy, komentarze i informacje o użytkownikach powinny być przechowywane w bazie danych, a obrazki powinny być przechowywane jako pliki.
@@ -38,3 +36,47 @@ Blog oferuje możliwość:
 2. Brak widocznych błędów komunikowanych przez język.
 3. Projekt się “kompiluje” - brak problemów przy oddawaniu projektu.
 4. “Ładny”/przejrzysty projekt - np. ładnie sformatowany formularz, jednolity; widok strony bez zbędnych elementów, czy rozjeżdżających się komponentów.
+
+## Struktura projektu
+```
+blog-numizmatyczny/
+│
+├── admin/
+│   └── templates/
+│       ├── footer.php
+│       ├── header.php
+│       ├── create.php
+│       ├── delete.php
+│       ├── edit.php
+│       ├── index.php
+│       ├── login.php
+│       ├── logout.php
+│       ├── process.php
+│       └── view.php
+│
+├── css/
+│   └── style.css
+│
+├── database/
+│   └── cms.sql
+│
+├── images/
+│   └── ... (przechowywane obrazki)
+│
+├── js/
+│   └── script.js
+│
+├── PHPMailer/
+│   └── ... (pliki związane z PHPMailer)
+│
+├── users/
+│   └── ... (pliki związane z użytkownikami)
+│
+├── composer.phar
+├── connect.php
+├── index.php
+├── comments.php
+├── send-script.php
+├── README.md
+└── view.php
+```
