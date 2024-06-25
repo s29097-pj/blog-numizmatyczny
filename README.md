@@ -42,17 +42,17 @@ Blog oferuje możliwość:
 blog-numizmatyczny/
 │
 ├── admin/
-│   └── templates/
-│       ├── footer.php
-│       ├── header.php
-│       ├── create.php
-│       ├── delete.php
-│       ├── edit.php
-│       ├── index.php
-│       ├── login.php
-│       ├── logout.php
-│       ├── process.php
-│       └── view.php
+│   ├── templates/
+│   │    ├── footer.php
+│   │    └──  header.php
+│   ├── create.php
+│   ├── delete.php
+│   ├── edit.php
+│   ├── index.php
+│   ├── login.php
+│   ├── logout.php
+│   ├── process.php
+│   └── view.php
 │
 ├── css/
 │   └── style.css
@@ -64,19 +64,29 @@ blog-numizmatyczny/
 │   └── ... (przechowywane obrazki)
 │
 ├── js/
-│   └── script.js
+│   ├── script.js
+│   └── sidebar.js
 │
 ├── PHPMailer/
 │   └── ... (pliki związane z PHPMailer)
 │
 ├── users/
-│   └── ... (pliki związane z użytkownikami)
+│   ├── login.php
+│   ├── logout.php
+│   ├── profile.php
+│   └── register.php
 │
+├── views/
+│   └── templates/
+│       ├── footer_view.php
+│       └── header_view.php
+│
+├── add_comment.php
+├── comments.php
 ├── composer.phar
 ├── connect.php
 ├── index.php
-├── comments.php
-├── send-script.php
+├── post_view.php
 ├── README.md
-└── view.php
+└── send_script.php
 ```

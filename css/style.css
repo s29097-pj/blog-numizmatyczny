@@ -179,25 +179,8 @@ section {
 }
 
 #posts .container {
-    max-width: 80rem;
-    width: 100%;
-    margin: 0 auto; /* Wyśrodkowanie kontenera */
+    max-width: 100%; /* Ustaw maksymalną szerokość kontenera na 100% */
     padding: 0 15px; /* Dodatkowe wypełnienie po bokach */
-}
-
-#posts header,
-.contact header,
-.footer header {
-    background-color: #07509e;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
-}
-
-#posts header h1,
-.contact header h1,
-.footer header h1 {
-    font-size: 2.5rem;
 }
 
 #posts .post-list {
@@ -207,12 +190,14 @@ section {
 
 #posts .post-list .post {
     display: grid;
-    width: 100%;
+    grid-template-columns: 1fr 2fr 2fr 4fr 1fr; /* Dodaj to, aby mieć proporcje kolumn */
+    gap: 1rem; /* Odstępy między kolumnami */
     padding: 2rem;
     background: #fff;
     border: var(--border);
     border-radius: .5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    align-items: center; /* Wyśrodkuj elementy w pionie */
 }
 
 #posts .post-list .post .date {
@@ -234,6 +219,12 @@ section {
     padding: 1rem 0;
 }
 
+#posts .post-list .post img {
+    width: 100%; /* Ustaw szerokość obrazu na 100% szerokości kolumny */
+    height: auto; /* Ustaw wysokość na automatyczną */
+}
+
+
 /* Kontakt */
 .contact {
     background: url(../images/contact-bg.jpg) no-repeat center center fixed;
@@ -246,7 +237,7 @@ section {
     box-shadow: var(--box-shadow); /* Cień */
     border-radius: .5rem; /* Zaokrąglenie krawędzi */
     margin: 4rem auto; /* Odstęp od góry i dołu */
-    max-width: 80rem; /* Ustaw maksymalną szerokość formularza*/
+    max-width: 80rem; /* Ustaw maksymalną szerokość formularza */
     padding: 2rem; /* Wypełnienie formularza */
 }
 
@@ -272,7 +263,7 @@ section {
     margin: .7rem 0;
     border-radius: .5rem;
     color: var(--black);
-    font-size: 1.7rem; /* Rozmiar czcionki treść wiadomości*/
+    font-size: 1.7rem; /* Rozmiar czcionki treść wiadomości */
 }
 
 .contact form .inputBox input {
@@ -378,5 +369,31 @@ section {
     .container {
         grid-template-columns: 1fr;
         gap: 0;
+    }
+
+    #posts .post-list .post {
+        grid-template-columns: 1fr; /* Jedna kolumna dla małych ekranów */
+        text-align: center;
+    }
+
+    #posts .post-list .post h2 {
+        font-size: 2rem; /* Skalowanie rozmiaru czcionki tytułu */
+        padding-top: 1rem; /* Odstęp od góry tytułu */
+    }
+
+    #posts .post-list .post img {
+        max-width: 100%; /* Ustaw maksymalną szerokość obrazu na 100% */
+        height: auto; /* Wysokość automatyczna */
+    }
+}
+
+@media (min-width: 1200px) {
+    #posts .post-list .post {
+        grid-template-columns: 1fr 2fr 2fr 4fr 1fr; /* Ustal proporcje kolumn */
+    }
+
+    .header,
+    .footer {
+        padding: 2rem 10%;
     }
 }
